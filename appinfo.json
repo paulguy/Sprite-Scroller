@@ -1,0 +1,267 @@
+{
+  "uuid": "394130d0-163c-44ed-9b1f-bf1c9414c3b4",
+  "shortName": "sprscroller",
+  "longName": "Sprite Scroller",
+  "companyName": "paulguy",
+  "versionCode": 1,
+  "versionLabel": "1.1",
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": [
+      {
+        "type": "png",
+        "name": "IMAGE_0",
+        "file": "images/0.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_1",
+        "file": "images/1.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_2",
+        "file": "images/2.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_3",
+        "file": "images/3.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_4",
+        "file": "images/4.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_5",
+        "file": "images/5.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_6",
+        "file": "images/6.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_7",
+        "file": "images/7.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_8",
+        "file": "images/8.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_9",
+        "file": "images/9.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_0_SMALL",
+        "file": "images/s0.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_1_SMALL",
+        "file": "images/s1.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_2_SMALL",
+        "file": "images/s2.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_3_SMALL",
+        "file": "images/s3.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_4_SMALL",
+        "file": "images/s4.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_5_SMALL",
+        "file": "images/s5.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_6_SMALL",
+        "file": "images/s6.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_7_SMALL",
+        "file": "images/s7.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_8_SMALL",
+        "file": "images/s8.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_9_SMALL",
+        "file": "images/s9.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_STATUS",
+        "file": "images/status.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BATT_LOW",
+        "file": "images/batt_low.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BATT_MED",
+        "file": "images/batt_med.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BATT_HIGH",
+        "file": "images/batt_high.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BATT_FULL",
+        "file": "images/batt_full.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BLUETOOTH",
+        "file": "images/bluetooth.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_SUNDAY",
+        "file": "images/sunday.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_MONDAY",
+        "file": "images/monday.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_TUESDAY",
+        "file": "images/tuesday.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_WEDNESDAY",
+        "file": "images/wednesday.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_THURSDAY",
+        "file": "images/thursday.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_FRIDAY",
+        "file": "images/friday.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_SATURDAY",
+        "file": "images/saturday.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_POINTER",
+        "file": "images/pointer.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BG",
+        "file": "images/back.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_LAND",
+        "file": "images/land.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_LAND2",
+        "file": "images/land2.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_LAND3",
+        "file": "images/land3.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_LAND_FILLER",
+        "file": "images/land-filler.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BEACH_FORE",
+        "file": "images/beach-f.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BEACH_BACK",
+        "file": "images/beach-b.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_WATER_NARROW",
+        "file": "images/water-narrow.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_WATER_LARGE",
+        "file": "images/water-large.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_FOAM",
+        "file": "images/foam.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_SUN",
+        "file": "images/sun.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_MOON",
+        "file": "images/moon.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_SUN_REFLECT",
+        "file": "images/sun-ref.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_CLOUD_LARGE",
+        "file": "images/cloud.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_CLOUD_SMALL",
+        "file": "images/cloud-sm.png"
+      }
+    ]
+  },
+  "targetPlatforms": [
+    "basalt"
+  ],
+  "sdkVersion": "3"
+}
