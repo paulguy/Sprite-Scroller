@@ -1,3 +1,6 @@
 
 # Ignore build generated files
 build
+pebble_screenshot_*.png
+banner.*
+.lock-waf_linux2_build

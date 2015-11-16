@@ -22,6 +22,9 @@
 #include "spritelist.h" // must be after sprite.h
 #include "bitmap.h"
 
+// Comment to disable all debug/profile features.
+//#define DEVELOPER
+
 // TODO: Battery/bluetooth readout.
 // TODO: Date readout.
 
@@ -43,20 +46,26 @@ BGChange bgchanges[] = {
   {1200, ((GColor8)((uint8_t)0b11010010))}, // 20
   {1260, ((GColor8)((uint8_t)0b11000001))}  // 21
 };
-
 #define BGCHANGENUM (sizeof(bgchanges) / sizeof(BGChange))
+
 #define MINSINDAY (60 * 24)
 #define SCREENWIDTH (144)
 #define SCREENHEIGHT (168)
 
+#define BATT_MED_LEVEL (20)
+#define BATT_HIGH_LEVEL (65)
+#define BATT_FULL_LEVEL (90)
+
+#ifdef DEVELOPER
 // Comment to run in normal mode.  Uncomment and change to set a starting time
 // for preview.  In this mode, time can also be changed at runtime with emulated
 // taps in the x- and x+ direction, and does not respond to real time at all.
-//#define FORCESTARTAT (1400)
+#define FORCESTARTAT (1400)
 // How much the screen will step in preview mode.
 #define PREVIEWSTEP (36)
 // Uncomment to report draw time and free heap.
 #define PROFILING
+#endif
 
 // this doesn't check whether the values make sense...
 #define RANGE_TEST(S1, E1, S2, E2) (!(S2 > E1 || E2 < S1))
@@ -95,6 +104,7 @@ void update_time() {
 #endif
 }
 
+#ifdef FORCESTARTAT
 void advance_time_manually(AccelAxisType axis, int32_t direction) {
   if(axis == ACCEL_AXIS_X) {
     if(direction > 0) {
@@ -109,6 +119,12 @@ void advance_time_manually(AccelAxisType axis, int32_t direction) {
   }
   layer_mark_dirty(screen);
 }
+#else
+void handle_tick(struct tm *tick_time, TimeUnits units_changed) {
+  update_time();
+  layer_mark_dirty(screen);
+}
+#endif
 
 void update_window_color() {
   unsigned int i;
@@ -125,7 +141,6 @@ void update_window_color() {
 
 void draw_full(Layer *layer, GContext *ctx) {
   unsigned int i;
-  int start, startms, end, endms;
   int realdaymin;
 
 #ifdef FORCESTARTAT
@@ -139,8 +154,12 @@ void draw_full(Layer *layer, GContext *ctx) {
   graphics_context_set_compositing_mode(ctx, GCompOpSet);
   update_window_color();
   
+#ifdef PROFILING
+  int start, startms, end, endms;
+
   start = time(NULL);
   startms = time_ms(NULL, NULL);
+#endif
 
   // fill the screen with background graphic
   for(i = 0; i < SCREENWIDTH / 32 + 1; i++) {
@@ -201,50 +220,45 @@ void draw_full(Layer *layer, GContext *ctx) {
 
   // Status bar stuff
   graphics_draw_bitmap_in_rect(ctx, status,
-                               GRect(2, SCREENHEIGHT - 13, 49, 11));
+                               GRect(2, SCREENHEIGHT - 13, 52, 11));
   graphics_draw_bitmap_in_rect(ctx, weekdays[weekday],
                                GRect(4, SCREENHEIGHT - 11, 17, 7));
   if(day > 9) {
     graphics_draw_bitmap_in_rect(ctx, numbers[day / 10],
-                                 GRect(22, SCREENHEIGHT - 11, 5, 7));
+                                 GRect(25, SCREENHEIGHT - 11, 5, 7));
   }
   graphics_draw_bitmap_in_rect(ctx, numbers[day % 10],
-                               GRect(28, SCREENHEIGHT - 11, 5, 7));
-  if(battlife <= 20) {
+                               GRect(31, SCREENHEIGHT - 11, 5, 7));
+  if(battlife <= BATT_MED_LEVEL) {
     graphics_draw_bitmap_in_rect(ctx, batteries[0],
-                                 GRect(36, SCREENHEIGHT - 11, 5, 7));
-  } else if(battlife <= 65) {
+                                 GRect(39, SCREENHEIGHT - 11, 5, 7));
+  } else if(battlife <= BATT_HIGH_LEVEL) {
     graphics_draw_bitmap_in_rect(ctx, batteries[1],
-                                 GRect(36, SCREENHEIGHT - 11, 5, 7));
-  } else if(battlife <= 90) {
+                                 GRect(39, SCREENHEIGHT - 11, 5, 7));
+  } else if(battlife <= BATT_FULL_LEVEL) {
     graphics_draw_bitmap_in_rect(ctx, batteries[2],
-                                 GRect(36, SCREENHEIGHT - 11, 5, 7));
+                                 GRect(39, SCREENHEIGHT - 11, 5, 7));
   } else {
     graphics_draw_bitmap_in_rect(ctx, batteries[3],
-                                 GRect(36, SCREENHEIGHT - 11, 5, 7));
+                                 GRect(39, SCREENHEIGHT - 11, 5, 7));
   }
   if(btstatus) {
     graphics_draw_bitmap_in_rect(ctx, bluetooth,
-                                 GRect(44, SCREENHEIGHT - 11, 5, 7));
+                                 GRect(47, SCREENHEIGHT - 11, 5, 7));
   }
 
 #ifdef PROFILING
-  // before bitmaps_clean() to get peak heap usage. Comment out for more accurate performance measure.
+  // before bitmaps_clean() to get peak heap usage.
   APP_LOG(APP_LOG_LEVEL_DEBUG, "Heap free after draw: %d", heap_bytes_free());
 #endif
   bitmaps_clean();
 
+#ifdef PROFILING
   endms = time_ms(NULL, NULL);
   end = time(NULL);
 
-#ifdef PROFILING
   APP_LOG(APP_LOG_LEVEL_DEBUG, "Draw took %d milliseconds", ((end * 1000 + endms) - (start * 1000 + startms)));
 #endif
-}
-
-void handle_tick(struct tm *tick_time, TimeUnits units_changed) {
-  update_time();
-  layer_mark_dirty(screen);
 }
 
 static void main_window_load(Window *window) {
