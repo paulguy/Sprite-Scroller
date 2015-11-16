@@ -33,9 +33,8 @@ typedef struct {
   GColor color;
 } BGChange;
 
-// 0 must be specified
+// last value wraps around
 BGChange bgchanges[] = {
-  {0,    ((GColor8)((uint8_t)0b11000001))},
   {300,  ((GColor8)((uint8_t)0b11010001))}, // 5
   {330,  ((GColor8)((uint8_t)0b11100001))}, // 5:30
   {360,  ((GColor8)((uint8_t)0b11111001))}, // 6
@@ -129,6 +128,11 @@ void handle_tick(struct tm *tick_time, TimeUnits units_changed) {
 void update_window_color() {
   unsigned int i;
   
+  if(daymin >= 0 && daymin < bgchanges[0].daymin) {
+    window_set_background_color(mainwindow, bgchanges[BGCHANGENUM-1].color);
+    return;
+  }
+  
   for(i = 0; i < BGCHANGENUM - 1; i++) {
     if(daymin >= bgchanges[i].daymin && daymin < bgchanges[i+1].daymin) {
       window_set_background_color(mainwindow, bgchanges[i].color);
@@ -220,31 +224,31 @@ void draw_full(Layer *layer, GContext *ctx) {
 
   // Status bar stuff
   graphics_draw_bitmap_in_rect(ctx, status,
-                               GRect(2, SCREENHEIGHT - 13, 52, 11));
+                               GRect(2, SCREENHEIGHT - 15, 66, 13));
   graphics_draw_bitmap_in_rect(ctx, weekdays[weekday],
-                               GRect(4, SCREENHEIGHT - 11, 17, 7));
+                               GRect(4, SCREENHEIGHT - 13, 23, 9));
   if(day > 9) {
     graphics_draw_bitmap_in_rect(ctx, numbers[day / 10],
-                                 GRect(25, SCREENHEIGHT - 11, 5, 7));
+                                 GRect(31, SCREENHEIGHT - 13, 7, 9));
   }
   graphics_draw_bitmap_in_rect(ctx, numbers[day % 10],
-                               GRect(31, SCREENHEIGHT - 11, 5, 7));
+                               GRect(39, SCREENHEIGHT - 13, 7, 9));
   if(battlife <= BATT_MED_LEVEL) {
     graphics_draw_bitmap_in_rect(ctx, batteries[0],
-                                 GRect(39, SCREENHEIGHT - 11, 5, 7));
+                                 GRect(49, SCREENHEIGHT - 13, 7, 9));
   } else if(battlife <= BATT_HIGH_LEVEL) {
     graphics_draw_bitmap_in_rect(ctx, batteries[1],
-                                 GRect(39, SCREENHEIGHT - 11, 5, 7));
+                                 GRect(49, SCREENHEIGHT - 13, 7, 9));
   } else if(battlife <= BATT_FULL_LEVEL) {
     graphics_draw_bitmap_in_rect(ctx, batteries[2],
-                                 GRect(39, SCREENHEIGHT - 11, 5, 7));
+                                 GRect(49, SCREENHEIGHT - 13, 7, 9));
   } else {
     graphics_draw_bitmap_in_rect(ctx, batteries[3],
-                                 GRect(39, SCREENHEIGHT - 11, 5, 7));
+                                 GRect(49, SCREENHEIGHT - 13, 7, 9));
   }
   if(btstatus) {
     graphics_draw_bitmap_in_rect(ctx, bluetooth,
-                                 GRect(47, SCREENHEIGHT - 11, 5, 7));
+                                 GRect(59, SCREENHEIGHT - 13, 7, 9));
   }
 
 #ifdef PROFILING
