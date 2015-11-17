@@ -153,6 +153,13 @@ Sprite spritelist[] = {
     },
     .res = RESOURCE_ID_IMAGE_LAND,
   },
+  {
+    .rect = {
+      .origin = {.x = 143, .y = 133},
+      .size = {.w = 16, .h = 12}
+    },
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_L1,
+  },
   { // 5
     .rect = {
       .origin = {.x = 65, .y = 121},
@@ -160,26 +167,40 @@ Sprite spritelist[] = {
     },
     .res = RESOURCE_ID_IMAGE_LAND2,
   },
+  {
+    .rect = {
+      .origin = {.x = 107, .y = 129},
+      .size = {.w = 20, .h = 10}
+    },
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_L2,
+  },
   { // 3
     .rect = {
       .origin = {.x = 24, .y = 118},
       .size = {.w = 64, .h = 32}
     },
     .res = RESOURCE_ID_IMAGE_LAND,
-  },
-  { // 13
+  },  
+  {
     .rect = {
-      .origin = {.x = 292, .y = 131},
-      .size = {.w = 64, .h = 32}
+      .origin = {.x = 24, .y = 128},
+      .size = {.w = 20, .h = 10}
     },
-    .res = RESOURCE_ID_IMAGE_LAND3,
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_R2,
   },
   { // 11
     .rect = {
-      .origin = {.x = 242, .y = 128},
+      .origin = {.x = 244, .y = 127},
       .size = {.w = 64, .h = 32}
     },
     .res = RESOURCE_ID_IMAGE_LAND3,
+  }, 
+  {
+    .rect = {
+      .origin = {.x = 256, .y = 133},
+      .size = {.w = 10, .h = 20}
+    },
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_R3,
   },
   { // 9
     .rect = {
@@ -208,6 +229,13 @@ Sprite spritelist[] = {
       .size = {.w = 64, .h = 32}
     },
     .res = RESOURCE_ID_IMAGE_LAND,
+  },
+  {
+    .rect = {
+      .origin = {.x = 517, .y = 133},
+      .size = {.w = 20, .h = 10}
+    },
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_R2,
   },
   { // 19
     .rect = {
@@ -302,12 +330,26 @@ Sprite spritelist[] = {
     },
     .res = RESOURCE_ID_IMAGE_LAND3,
   },
+  {
+    .rect = {
+      .origin = {.x = 384, .y = 134},
+      .size = {.w = 20, .h = 10}
+    },
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_L2,
+  },
   { // 14
     .rect = {
       .origin = {.x = 308, .y = 124},
       .size = {.w = 64, .h = 32}
     },
     .res = RESOURCE_ID_IMAGE_LAND,
+  },
+  {
+    .rect = {
+      .origin = {.x = 306, .y = 132},
+      .size = {.w = 10, .h = 20}
+    },
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_R3,
   },
   //  ##### LARGE LAKE START #####
   {
@@ -389,6 +431,13 @@ Sprite spritelist[] = {
   },
   {
     .rect = {
+      .origin = {.x = 600, .y = 122},
+      .size = {.w = 20, .h = 10}
+    },
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_L2,
+  },
+  {
+    .rect = {
       .origin = {.x = 673, .y = 133},
       .size = {.w = 24, .h = 24}
     },
@@ -415,6 +464,27 @@ Sprite spritelist[] = {
       .size = {.w = 64, .h = 32}
     },
     .res = RESOURCE_ID_IMAGE_LAND3,
+  },
+  {
+    .rect = {
+      .origin = {.x = 1130, .y = 129},
+      .size = {.w = 10, .h = 20}
+    },
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_R3,
+  },
+  {
+    .rect = {
+      .origin = {.x = 1079, .y = 127},
+      .size = {.w = 20, .h = 10}
+    },
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_R2,
+  },
+  {
+    .rect = {
+      .origin = {.x = 1146, .y = 134},
+      .size = {.w = 16, .h = 12}
+    },
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_L1,
   },
   { // 42
     .rect = {
@@ -443,6 +513,13 @@ Sprite spritelist[] = {
       .size = {.w = 64, .h = 32}
     },
     .res = RESOURCE_ID_IMAGE_LAND2,
+  },
+  {
+    .rect = {
+      .origin = {.x = 995, .y = 126},
+      .size = {.w = 20, .h = 10}
+    },
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_L2,
   },
   { // 48
     .rect = {
@@ -485,6 +562,20 @@ Sprite spritelist[] = {
       .size = {.w = 64, .h = 32}
     },
     .res = RESOURCE_ID_IMAGE_LAND3,
+  },
+  {
+    .rect = {
+      .origin = {.x = 1286, .y = 132},
+      .size = {.w = 20, .h = 10}
+    },
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_L2,
+  },
+  {
+    .rect = {
+      .origin = {.x = 1370, .y = 131},
+      .size = {.w = 10, .h = 20}
+    },
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_R3,
   },
   // ##### DECORATIONS START #####
   {
@@ -885,42 +976,112 @@ Sprite spritelist[] = {
       .size = {.w = 10, .h = 3}
     },
     .res = RESOURCE_ID_IMAGE_SUN_REFLECT,
-  },  
+  },
   {
     .rect = {
       .origin = {.x = 776, .y = 153},
       .size = {.w = 10, .h = 3}
     },
     .res = RESOURCE_ID_IMAGE_SUN_REFLECT,
-  },  
+  },
   {
     .rect = {
       .origin = {.x = 787, .y = 155},
       .size = {.w = 10, .h = 3}
     },
     .res = RESOURCE_ID_IMAGE_SUN_REFLECT,
-  },  
+  },
   {
     .rect = {
       .origin = {.x = 790, .y = 161},
       .size = {.w = 10, .h = 3}
     },
     .res = RESOURCE_ID_IMAGE_SUN_REFLECT,
-  },  
+  },
   {
     .rect = {
       .origin = {.x = 779, .y = 160},
       .size = {.w = 10, .h = 3}
     },
     .res = RESOURCE_ID_IMAGE_SUN_REFLECT,
-  },  
+  },
   {
     .rect = {
       .origin = {.x = 773, .y = 162},
       .size = {.w = 10, .h = 3}
     },
     .res = RESOURCE_ID_IMAGE_SUN_REFLECT,
-  },  
+  },
+  {
+    .rect = {
+      .origin = {.x = 573, .y = 106},
+      .size = {.w = 12, .h = 16}
+    },
+    .res = RESOURCE_ID_IMAGE_TREE_SMALL1,
+  },
+  {
+    .rect = {
+      .origin = {.x = 613, .y = 116},
+      .size = {.w = 12, .h = 16}
+    },
+    .res = RESOURCE_ID_IMAGE_TREE_SMALL2,
+  },
+  {
+    .rect = {
+      .origin = {.x = 552, .y = 113},
+      .size = {.w = 12, .h = 16}
+    },
+    .res = RESOURCE_ID_IMAGE_TREE_SMALL2,
+  },
+  {
+    .rect = {
+      .origin = {.x = 592, .y = 147},
+      .size = {.w = 12, .h = 16}
+    },
+    .res = RESOURCE_ID_IMAGE_TREE_SMALL1,
+  },
+  {
+    .rect = {
+      .origin = {.x = 509, .y = 121},
+      .size = {.w = 12, .h = 16}
+    },
+    .res = RESOURCE_ID_IMAGE_TREE_SMALL2,
+  },
+  {
+    .rect = {
+      .origin = {.x = 555, .y = 130},
+      .size = {.w = 12, .h = 16}
+    },
+    .res = RESOURCE_ID_IMAGE_TREE_SMALL1,
+  },
+  {
+    .rect = {
+      .origin = {.x = 637, .y = 132},
+      .size = {.w = 12, .h = 16}
+    },
+    .res = RESOURCE_ID_IMAGE_TREE_SMALL2,
+  },
+  {
+    .rect = {
+      .origin = {.x = 652, .y = 124},
+      .size = {.w = 12, .h = 16}
+    },
+    .res = RESOURCE_ID_IMAGE_TREE_SMALL1,
+  },
+  {
+    .rect = {
+      .origin = {.x = 525, .y = 153},
+      .size = {.w = 12, .h = 16}
+    },
+    .res = RESOURCE_ID_IMAGE_TREE_SMALL1,
+  },
+  {
+    .rect = {
+      .origin = {.x = 552, .y = 154},
+      .size = {.w = 12, .h = 16}
+    },
+    .res = RESOURCE_ID_IMAGE_TREE_SMALL2,
+  },
   // ##### DECORATIONS END #####
   // ##################################################
   // ##### PLACE ALL GRAPHICS BEFORE THIS LINE!!! #####

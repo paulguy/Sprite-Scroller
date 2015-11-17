@@ -257,6 +257,56 @@
         "type": "png",
         "name": "IMAGE_CLOUD_SMALL",
         "file": "images/cloud-sm.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_TREE_LARGE1",
+        "file": "images/tree_large1.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_TREE_LARGE2",
+        "file": "images/tree_large2.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_TREE_LARGE3",
+        "file": "images/tree_large3.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_TREE_SMALL1",
+        "file": "images/tree_small1.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_TREE_SMALL2",
+        "file": "images/tree_small2.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_LAND_DETAIL_L1",
+        "file": "images/land_detail_l1.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_LAND_DETAIL_L2",
+        "file": "images/land_detail_l2.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_LAND_DETAIL_R1",
+        "file": "images/land_detail_r1.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_LAND_DETAIL_R2",
+        "file": "images/land_detail_r2.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_LAND_DETAIL_R3",
+        "file": "images/land_detail_r3.png"
       }
     ]
   },

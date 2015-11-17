@@ -139,5 +139,55 @@ Bitmap bitmaps[] = {
     .res = RESOURCE_ID_IMAGE_CLOUD_SMALL,
     .b = NULL,
     .ref = 0
+  },
+  {
+    .res = RESOURCE_ID_IMAGE_TREE_LARGE1,
+    .b = NULL,
+    .ref = 0
+  },
+  {
+    .res = RESOURCE_ID_IMAGE_TREE_LARGE2,
+    .b = NULL,
+    .ref = 0
+  },
+  {
+    .res = RESOURCE_ID_IMAGE_TREE_LARGE3,
+    .b = NULL,
+    .ref = 0
+  },
+  {
+    .res = RESOURCE_ID_IMAGE_TREE_SMALL1,
+    .b = NULL,
+    .ref = 0
+  },
+  {
+    .res = RESOURCE_ID_IMAGE_TREE_SMALL2,
+    .b = NULL,
+    .ref = 0
+  },
+  {
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_L1,
+    .b = NULL,
+    .ref = 0
+  },
+  {
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_L2,
+    .b = NULL,
+    .ref = 0
+  },
+  {
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_R1,
+    .b = NULL,
+    .ref = 0
+  },
+  {
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_R2,
+    .b = NULL,
+    .ref = 0
+  },
+  {
+    .res = RESOURCE_ID_IMAGE_LAND_DETAIL_R3,
+    .b = NULL,
+    .ref = 0
   }
 };

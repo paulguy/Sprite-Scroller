@@ -59,7 +59,7 @@ BGChange bgchanges[] = {
 // Comment to run in normal mode.  Uncomment and change to set a starting time
 // for preview.  In this mode, time can also be changed at runtime with emulated
 // taps in the x- and x+ direction, and does not respond to real time at all.
-#define FORCESTARTAT (1400)
+#define FORCESTARTAT (1296)
 // How much the screen will step in preview mode.
 #define PREVIEWSTEP (36)
 // Uncomment to report draw time and free heap.
